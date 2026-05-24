@@ -1,0 +1,8 @@
+# name,element,hp,attack,defense,speed,skill1|skill2
+Flarefox,fire,80,24,10,18,Ember|Flame Claw
+Aquari,water,90,20,14,12,Aqua Shot|Bubble Guard
+Leafling,grass,75,22,12,20,Leaf Blade|Vine Hit
+Voltbat,electric,70,26,8,25,Spark|Thunder Bite
+Stonehorn,rock,110,18,22,8,Rock Smash|Stone Charge
+Sproutrex,grass,95,19,16,10,Vine Hit|Solar Seed
+Steamlord,water,100,23,15,11,Aqua Shot|Steam Burst

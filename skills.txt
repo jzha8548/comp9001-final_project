@@ -1,0 +1,13 @@
+# name,element,power,accuracy
+Ember,fire,18,90
+Flame Claw,fire,25,80
+Aqua Shot,water,20,90
+Bubble Guard,water,14,100
+Leaf Blade,grass,22,85
+Vine Hit,grass,16,95
+Spark,electric,20,90
+Thunder Bite,electric,28,75
+Rock Smash,rock,24,85
+Stone Charge,rock,30,70
+Solar Seed,grass,26,80
+Steam Burst,water,28,75
