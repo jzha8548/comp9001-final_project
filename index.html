@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpiritForge UI</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__text">
+      <p class="eyebrow">COMP9001 Final Project · Frontend UI Companion</p>
+      <h1>SpiritForge</h1>
+      <h2>Creature Battle Balance Simulator</h2>
+      <p>
+        A visual interface for explaining the battle logic behind the Python project:
+        type matchups, turn order, damage calculation, battle logs, and balance reports.
+      </p>
+      <div class="hero__actions">
+        <button id="guidedDemoBtn" class="primary">Run guided demo</button>
+        <button id="loadDataBtn" class="secondary">Reload data</button>
+      </div>
+    </div>
+    <div class="hero__image-card">
+      <img src="assets/spiritforge_padlet_image.png" alt="SpiritForge representative poster" />
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="panel controls-panel">
+      <h3>Control Panel</h3>
+      <p class="muted">Choose two creatures and test the matchup.</p>
+
+      <label for="playerSelect">Player creature</label>
+      <select id="playerSelect"></select>
+
+      <label for="enemySelect">Enemy creature</label>
+      <select id="enemySelect"></select>
+
+      <label for="simulationCount">Number of simulations</label>
+      <input id="simulationCount" type="number" min="1" max="500" value="30" />
+
+      <div class="button-stack">
+        <button id="previewBtn" class="secondary">Preview matchup</button>
+        <button id="singleBattleBtn" class="secondary">Simulate one battle</button>
+        <button id="balanceBtn" class="primary">Run balance test</button>
+        <button id="testsBtn" class="secondary">Run system tests</button>
+        <button id="downloadReportBtn" class="secondary">Download latest report</button>
+      </div>
+
+      <div class="status-card">
+        <strong>Data status</strong>
+        <p id="dataStatus">Loading...</p>
+      </div>
+    </aside>
+
+    <section class="content">
+      <section class="panel explanation-panel">
+        <div>
+          <h3>Core Battle Logic</h3>
+          <p>
+            <strong>Turn order:</strong> the creature with higher <code>SPD</code> attacks first.
+            If speed is tied, the player creature moves first.
+          </p>
+          <p>
+            <strong>Damage:</strong>
+            <code>max(1, ATK + skill power - DEF) × type multiplier</code>.
+            The multiplier comes from a two-dimensional type chart.
+          </p>
+        </div>
+        <div class="formula-box">
+          <span>Expected skill score</span>
+          <strong>damage × accuracy</strong>
+          <small>The simulator chooses the skill with the highest expected score.</small>
+        </div>
+      </section>
+
+      <section class="grid two-cols">
+        <article class="panel" id="matchupPanel">
+          <h3>Matchup Preview</h3>
+          <div id="matchupPreview" class="empty-state">Click “Preview matchup” or “Run guided demo”.</div>
+        </article>
+
+        <article class="panel" id="reportPanel">
+          <h3>Balance Report</h3>
+          <div id="balanceReport" class="empty-state">No balance report yet.</div>
+        </article>
+      </section>
+
+      <section class="grid two-cols">
+        <article class="panel">
+          <h3>Type Effectiveness Chart</h3>
+          <div id="typeChart"></div>
+        </article>
+
+        <article class="panel">
+          <h3>System Tests</h3>
+          <div id="testResults" class="empty-state">Run tests to verify the logic.</div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h3>Battle Log</h3>
+        <div id="battleLog" class="log-box empty-state">No battle simulated yet.</div>
+      </section>
+
+      <section class="grid two-cols">
+        <article class="panel">
+          <h3>Creature Database</h3>
+          <div id="creatureTable"></div>
+        </article>
+
+        <article class="panel">
+          <h3>Skill Database</h3>
+          <div id="skillTable"></div>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      This web UI is a static JavaScript companion for the Python version.
+      It mirrors the same battle design logic so the project is easier to understand and demonstrate.
+    </p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
